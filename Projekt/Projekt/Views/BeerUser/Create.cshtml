@@ -1,0 +1,49 @@
+﻿@model BeerUser
+
+
+@{
+    ViewData["Title"] = ViewBag.Action + " user";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="create" novalidate>
+    
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="NickName" class="control-label"></label>
+        <input asp-for="NickName" class="form-control" />
+        <span asp-validation-for="NickName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BeerRoleId" class="control-label"></label>
+        <select asp-for="BeerRoleId" asp-items="@ViewBag.BeerRoles" class="form-control">
+            <option value="">Select a role</option>
+    
+        </select>
+        
+
+        @* <span asp-validation-for="BeerRoleId" class="text-danger"></span> *@
+    </div>
+
+    <div class="form-group">
+        @* <input type="submit" value="Save" class="btn btn-primary" /> *@
+        <input type="submit" value="@ViewBag.Action" class="btn btn-primary" />
+    </div>
+
+    
+
+</form>
+
+
+

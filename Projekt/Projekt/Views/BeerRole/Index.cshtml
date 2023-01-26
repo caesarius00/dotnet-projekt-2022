@@ -1,0 +1,49 @@
+﻿@model ICollection<BeerRole>
+
+@{
+    //Layout = null;
+    ViewData["Title"] = "Beer roles";
+    
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<p>
+    <a asp-action="Create"><button type="button">Add new role</button></a>
+
+    @if (Model.Count == 0){
+        <p>No beer roles found</p>
+    }
+    else{
+        <table id="content-table">
+            <tr id="table-title">
+                <td>Name</td>
+                <td>Description</td>
+                <td></td>
+                <td></td>
+            </tr>
+            @foreach (var role in Model){
+            @* <div class="content-line"> *@
+                <tr>
+                    <td>@role.Name</td>
+                    <td>@role.Description</td>
+
+                    <td>
+                        <form class="crud-button" asp-route-id="@role.Id" asp-action="Delete" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+
+                    <td>
+                        <form class="crud-button" asp-route-id="@role.Id" asp-action="Edit" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+            @* </div> *@
+
+            }
+        </table>
+    }
+</p>

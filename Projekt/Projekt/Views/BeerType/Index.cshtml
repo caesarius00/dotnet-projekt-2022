@@ -1,0 +1,40 @@
+﻿@model ICollection<BeerType>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Beer types";
+    
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+    <a asp-action="Create"><button type="button">Add new type of beer</button></a>
+
+    @if (Model.Count == 0){
+        <p>No beer types found</p>
+    }
+    else{
+        @foreach (var beerType in Model){
+            <div class="content-line">
+                <form class="crud-button" asp-route-id="@beerType.Id" asp-action="Delete" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+                <form class="crud-button" asp-route-id="@beerType.Id" asp-action="Edit" method="get">
+                    <button type="submit">Edit</button>
+                </form>
+
+                <span>@beerType.ToString()</span>
+
+                <button id="partial" onclick="partialView(@beerType.Id)">See beers</button>
+
+            </div>
+        }
+    }
+
+<script>
+function partialView(id) {
+    $("#content-right").load("/BeerType/TypesPartialView/"+id).removeClass("no-display");
+    
+}
+</script>

@@ -1,0 +1,50 @@
+﻿@model ICollection<Brewery>
+
+@{
+    //Layout = null;
+    ViewData["Title"] = "Breweries";
+    
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+    <a asp-action="Create"><button type="button">Add new brewery</button></a>
+<div class="content-line"></div>
+    @if(Model.Count == 0)
+    {
+        <p>No breweries found</p>
+    }
+    else
+    {
+        <table id="content-table">
+            <tr id="table-title">
+                <td>Name</td>
+                <td>Country of origin</td>
+                <td>City oo.</td>
+                <td></td>
+                <td></td>
+            </tr>
+            @foreach (var brewery in Model){
+            @* <div class="content-line"> *@
+                    @* <span>@brewery.ToString()</span> *@
+                <tr>
+                    <td>@brewery.Name</td>
+                    <td>@brewery.Country</td>
+                    <td>@brewery.City</td>
+
+                    <td>
+                        <form class="crud-button" asp-route-id="@brewery.Id" asp-action="Delete" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form class="crud-button" asp-route-id="@brewery.Id" asp-action="Edit" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                    </td>
+                </tr>
+                // </div>
+            }
+        </table>
+    }

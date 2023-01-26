@@ -1,0 +1,44 @@
+﻿@model BeerType
+
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = ViewBag.Action + " beer type";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="create" novalidate>
+    
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="MinAlcohol" class="control-label"></label>
+        <input asp-for="MinAlcohol" class="form-control" />
+        <span asp-validation-for="MinAlcohol" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="MaxAlcohol" class="control-label"></label>
+        <input asp-for="MaxAlcohol" class="form-control" />
+    <span asp-validation-for="MaxAlcohol" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        @* <input type="submit" value="Create" class="btn btn-primary" /> *@
+        <input type="submit" value="@ViewBag.Action" class="btn btn-primary" />
+    </div>
+
+
+</form>
+

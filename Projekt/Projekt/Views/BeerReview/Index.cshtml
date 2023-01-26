@@ -1,0 +1,29 @@
+﻿@model ICollection<BeerReview>
+
+@{
+    //Layout = null;
+    ViewData["Title"] = "Beer reviews";
+    
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<p>
+    <a asp-action="Create"><button type="button">Add new review</button></a>
+
+    @* @if (Model.Count == 0){ *@
+    @*     <p>No reviews found</p> *@
+    @* } *@
+    @* else{ *@
+    @*     @foreach (var review in Model){ *@
+    @*         <div class="content-line"> *@
+    @*             @review.ToString(); *@
+    @*         </div> *@
+    @*                             *@
+    @*     } *@
+    @* } *@
+    
+    <reviews collection="@Model"></reviews>
+    
+</p>

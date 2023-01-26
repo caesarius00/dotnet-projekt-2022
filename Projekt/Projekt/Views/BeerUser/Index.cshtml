@@ -1,0 +1,44 @@
+﻿@model ICollection<BeerUser>
+
+@{
+    ViewData["Title"] = "Beer users";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    @if (Model.Count == 0){
+        <p>No users found</p>
+    }
+    else{
+        <div class="content-line"></div>
+        <table id="content-table">
+            <tr id="table-title">
+                <td>Nickname</td>
+                <td>Email</td>
+                <td>Role</td>
+                <td></td>
+                <td></td>
+            </tr>
+            @foreach (var user in Model){
+                <tr>
+                    @* <div class="content-line"> *@
+                    <td>@user.NickName</td>
+                    <td>@user.Email</td>
+                    <td>@user.BeerRole.Name</td>
+                    <td>
+                        <form class="crud-button" asp-route-id="@user.Id" asp-action="Delete" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                    <td>
+                    <form class="crud-button" asp-route-id="@user.Id" asp-action="Edit" method="get">
+                        <button type="submit">Edit</button>
+                    </form>
+                    </td>
+                    @* </div> *@
+                </tr>
+            }
+        </table>
+    }
+
+</p>

@@ -1,0 +1,10 @@
+﻿@model ICollection<Beer>
+
+
+@foreach (var beer in Model){
+    <p>
+        <span>@beer.ToString()</span>
+    </p>
+}
+
+<button onclick="noDisplay()">Hide</button>

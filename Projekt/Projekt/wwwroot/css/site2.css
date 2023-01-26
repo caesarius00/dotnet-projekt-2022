@@ -1,0 +1,189 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /*margin-bottom: 60px    */
+  background-color: #1a0502;
+    background-size: 100%;
+
+  background-image: url(../img/beer-background.jpg);
+  /*center background horizontaly*/
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #000;
+}
+
+form.create{
+  margin-top: 5%;
+}
+
+.left-menu {
+  width: 20%;
+  float: left;
+  margin-top: 10%;
+    margin-left: 1%;
+}
+
+.left-menu-item {
+  width: 100%;
+  height: 50px;
+  background-color: #1a0502;
+  color: #fff;
+  text-align: center;
+  /*line-height: 50px;*/
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+#content {
+  width: 56%;
+  min-height: 80vh;
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 0 auto;
+  /*padding: 10px;*/
+  background-image: url(../img/hops.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background at the top*/
+    background-position-y: 0;
+  /*  background size*/
+  background-size: 40%;
+  left : 22%;
+  position: absolute;
+  top: 10%;
+  /*padding-top: 50px;*/
+  padding-left: 30px;
+    padding-right: 30px;
+}
+
+.content-line{
+    width: 100%;
+    min-height: 50px;
+    /*background-color:#ffb44a;*/
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    /*line-height: 50px;*/
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/*form as button*/
+form.crud-button {
+    display: inline;
+  
+}
+
+#review-table{
+    width: 100%;
+    min-height: 50px;
+    /*background-color:#ffb44a;*/
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    /*line-height: 50px;*/
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.review-line{
+    width: 100%;
+    min-height: 50px;
+    /*background-color:#ffb44a;*/
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    /*line-height: 50px;*/
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.review-date{
+  /*align to left*/
+    text-align: left;
+  background-color: antiquewhite;
+}
+
+#content-table{
+    width: 100%;
+    min-height: 50px;
+    /*background-color:#ffb44a;*/
+    color: #000;
+    /*line-height: 50px;*/
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+button:hover {
+    /*background-color:#ffbc3b;*/
+    color: #3b0b08;
+    text-decoration: underline;
+    background-image: url(../img/beer-fluid.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%
+}
+
+#content-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+#content-table tr:hover button {
+    background-color:#ffbc3b;
+    color: #3b0b08;
+}
+
+.date-line
+{
+    width: 100%;
+    min-height: 50px;
+    background-color:#ffb44a !important;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#table-title{
+    background-color:#ffb44a !important;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+#access-image{
+    width: 100%;
+    height: 100%;
+}

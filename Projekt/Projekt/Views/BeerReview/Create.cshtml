@@ -1,0 +1,47 @@
+﻿@using System.Security.Claims
+@model BeerReview
+
+
+@{
+    ViewData["Title"] = ViewBag.Action+" review";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" class="create" novalidate>
+    
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    
+    <div class="form-group">
+        <label asp-for="BeerId" class="control-label"></label>
+        <select asp-for="BeerId" asp-items="@ViewBag.Beers" class="form-control">
+            <option value="">Select a beer</option>
+        </select>
+        <span asp-validation-for="BeerId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rating" class="control-label"></label>
+        <input asp-for="Rating" class="form-control" />
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Review" class="control-label"></label>
+        <input asp-for="Review" class="form-control" />
+        <span asp-validation-for="Review" class="text-danger"></span>
+    </div>
+    
+    @* <input type="hidden" name="Date" value="@DateTime.Now.ToString()"> *@
+    @* <input type="hidden" name="BeerUserId" value="@ViewBag.User"> *@
+
+    <div class="form-group">
+        @* <input type="submit" value="Create" class="btn btn-primary" /> *@
+        <input type="submit" value="@ViewBag.Action" class="btn btn-primary" />
+    </div>
+
+
+</form>
+
+<p>
+    Added in session: @ViewBag.AddedInSession
+</p>
+
